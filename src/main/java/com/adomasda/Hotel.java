@@ -12,101 +12,104 @@ interface WithConditioning extends CommonRoom {
     boolean isOn();
 }
 
-interface KitchenNamespaceConflict extends CommonRoom {
+interface Kitchen extends CommonRoom {
     boolean isOvenOn();
 }
 
-interface ServiceRoomNamespaceConflict extends CommonRoom {
+interface ServiceRoom extends CommonRoom {
     boolean getAccess();
 }
 
-interface GarageNamespaceConflict extends CommonRoom {
+interface Garage extends CommonRoom {
     boolean isEmpty();
 }
 
-class FirstRoom implements WithBalcony {
-    boolean field = false;
+class CherryTreeHotel implements Kitchen, ServiceRoom, WithBalcony, WithConditioning, Garage {
+    private boolean kitchenLightOn;
+    private boolean serviceRoomLightOn;
+    private boolean balconyLightOn;
+    private boolean conditioningLightOn;
+    private boolean garageLightOn;
+    private boolean ovenOn;
+    private boolean accessGranted;
+    private boolean balconyOpen;
+    private boolean conditioningOn;
+    private boolean garageEmpty;
 
-    public void setField(boolean set) {
-        this.field = set;
-    }
-
-    public boolean isOpen() {
-        return field;
-    }
-
-    public boolean lightIsOn() {
-        return field;
-    }
-}
-
-class SecondRoom implements WithConditioning {
-    boolean field = false;
-
-    public void setField(boolean set) {
-        this.field = set;
-    }
-
-    public boolean isOn() {
-        return field;
-    }
-
-    public boolean lightIsOn() {
-        return field;
-    }
-}
-
-class Kitchen implements KitchenNamespaceConflict {
-    boolean field = false;
-
-    public void setField(boolean set) {
-        this.field = set;
+    public CherryTreeHotel() {
+        this.kitchenLightOn = false;
+        this.serviceRoomLightOn = false;
+        this.balconyLightOn = false;
+        this.conditioningLightOn = false;
+        this.garageLightOn = false;
+        this.ovenOn = false;
+        this.accessGranted = false;
+        this.balconyOpen = false;
+        this.conditioningOn = false;
+        this.garageEmpty = true;
     }
 
     public boolean isOvenOn() {
-        return field;
+        return ovenOn;
     }
 
     public boolean lightIsOn() {
-        return field;
-    }
-}
-
-
-class ServiceRoom implements ServiceRoomNamespaceConflict {
-    boolean field = false;
-
-    public void setField(boolean set) {
-        this.field = set;
+        return kitchenLightOn;
     }
 
     public boolean getAccess() {
-        return field;
+        return accessGranted;
     }
 
-    public boolean lightIsOn() {
-        return field;
+    public boolean isOpen() {
+        return balconyOpen;
     }
-}
 
-class Garage implements GarageNamespaceConflict {
-    boolean field = false;
-
-    public void setField(boolean set) {
-        this.field = set;
+    public boolean isOn() {
+        return conditioningOn;
     }
 
     public boolean isEmpty() {
-        return field;
+        return garageEmpty;
     }
 
-    public boolean lightIsOn() {
-        return field;
+    public void setKitchenLightOn(boolean state) {
+        this.kitchenLightOn = state;
+    }
+
+    public void setServiceRoomLightOn(boolean state) {
+        this.serviceRoomLightOn = state;
+    }
+
+    public void setBalconyLightOn(boolean state) {
+        this.balconyLightOn = state;
+    }
+
+    public void setConditioningLightOn(boolean state) {
+        this.conditioningLightOn = state;
+    }
+
+    public void setGarageLightOn(boolean state) {
+        this.garageLightOn = state;
+    }
+
+    public void setOvenOn(boolean state) {
+        this.ovenOn = state;
+    }
+
+    public void setAccessGranted(boolean state) {
+        this.accessGranted = state;
+    }
+
+    public void setBalconyOpen(boolean state) {
+        this.balconyOpen = state;
+    }
+
+    public void setConditioningOn(boolean state) {
+        this.conditioningOn = state;
+    }
+
+    public void setGarageEmpty(boolean state) {
+        this.garageEmpty = state;
     }
 }
-
-//class CherryTreeHotel implements Kitchen, ServiceRoom {
-//    public boolean isOvenOn() { return false; }
-//    public boolean lightIsOn() { return false; }
-//    public boolean getAccess() { return false; }
-//}
