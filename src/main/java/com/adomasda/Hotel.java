@@ -1,13 +1,27 @@
 package com.adomasda;
 
-interface Kitchen {
-    boolean isOvenOn();
+interface CommonRoom {
     boolean lightIsOn();
 }
 
-interface ServiceRoom {
+interface WithBalcony extends CommonRoom {
+    boolean isOpen();
+}
+
+interface WithConditioning extends CommonRoom {
+    boolean isOn();
+}
+
+interface Kitchen extends CommonRoom {
+    boolean isOvenOn();
+}
+
+interface ServiceRoom extends CommonRoom {
     boolean getAccess();
-    boolean lightIsOn();
+}
+
+interface Garage extends CommonRoom {
+    boolean isEmpty();
 }
 
 class CherryTreeHotel implements Kitchen, ServiceRoom {
