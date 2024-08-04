@@ -7,11 +7,11 @@ public class HotelTest {
     @Test
     public void SimpleHotelTest(){
         System.err.println("SimpleHotelTest");
-        Kitchen kitchen = new CherryTreelHotel();
+        Kitchen kitchen = new CherryTreeHotel();
         kitchen.isOvenOn();
         kitchen.lightIsOn();
 
-        ServiceRoom serviceRoom = new CherryTreelHotel();
+        ServiceRoom serviceRoom = new CherryTreeHotel();
         serviceRoom.getAccess();
         serviceRoom.lightIsOn();
     }
