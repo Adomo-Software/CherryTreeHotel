@@ -1,6 +1,6 @@
 package com.adomasda;
 
-interface ServiceRoom {
+interface ServiceRoom extends CommonRoom {
     boolean getAccess();
-    boolean lightIsOn();
 }
+
