@@ -25,7 +25,28 @@ public class HotelTest {
         WithConditioning room2 = new CherryTreeHotel();
 
         List<Lightable> lightables = new ArrayList<>();
+        lightables.add(garage);
+        lightables.add(kitchen);
+        lightables.add(serviceRoom);
+        lightables.add(room1);
+        lightables.add(room2);
 
+        interface Spa extends Lightable {
+            boolean isWaterWarm();
+        }
+        class CherryTreeSpa extends  CherryTreeHotel implements Spa {
+            private boolean waterWarm;
+            CherryTreeSpa() {
+                this.waterWarm = false;
+            }
+            public boolean isWaterWarm() {
+                return this.waterWarm;
+            }
+        };
+
+        Spa spa = new CherryTreeSpa();
+
+        lightables.add(spa);
 
         for(Lightable room : lightables){
             System.out.println(room.lightIsOn());
