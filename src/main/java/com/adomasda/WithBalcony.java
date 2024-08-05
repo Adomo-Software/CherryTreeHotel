@@ -1,5 +1,5 @@
 package com.adomasda;
 
-interface WithBalcony extends CommonRoom {
+interface WithBalcony extends Lightable {
     boolean isOpen();
 }

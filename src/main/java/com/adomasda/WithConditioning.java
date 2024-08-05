@@ -1,5 +1,5 @@
 package com.adomasda;
 
-interface WithConditioning extends CommonRoom {
+interface WithConditioning extends Lightable {
     boolean isOn();
 }
