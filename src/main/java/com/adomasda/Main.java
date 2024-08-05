@@ -1,16 +1,10 @@
 package com.adomasda;
 
-import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-public class HotelTest {
-
-    @Test
-    public void SimpleHotelTest(){
-        System.err.println("SimpleHotelTest");
+public class Main {
+    public static void main(String[] args) {
         Kitchen kitchen = new CherryTreeHotel();
 
         kitchen.isOvenOn();
@@ -51,6 +45,5 @@ public class HotelTest {
         for(Lightable room : lightables){
             System.out.println(room.lightIsOn());
         }
-
     }
 }
