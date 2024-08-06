@@ -1,5 +1,5 @@
 package com.adomasda;
 
-interface Garage extends Lightable {
+interface Garage extends CommonRoom {
     boolean isEmpty();
 }

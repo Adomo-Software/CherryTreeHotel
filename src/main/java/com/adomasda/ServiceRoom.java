@@ -1,6 +1,6 @@
 package com.adomasda;
 
-interface ServiceRoom extends Lightable {
+interface ServiceRoom extends CommonRoom {
     boolean getAccess();
 }
 

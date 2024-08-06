@@ -15,17 +15,9 @@ public class Main {
         serviceRoom.lightIsOn();
 
         Garage garage = new CherryTreeHotel();
-        WithBalcony room1 = new CherryTreeHotel();
-        WithConditioning room2 = new CherryTreeHotel();
-
-        List<Lightable> lightables = new ArrayList<>();
-        lightables.add(garage);
-        lightables.add(kitchen);
-        lightables.add(serviceRoom);
-        lightables.add(room1);
-        lightables.add(room2);
-
-        interface Spa extends Lightable {
+        FirstRoom firstRoom = new CherryTreeHotel();
+        SecondRoom SecondRoom = new CherryTreeHotel();
+        interface Spa extends CommonRoom {
             boolean isWaterWarm();
         }
         class CherryTreeSpa extends  CherryTreeHotel implements Spa {
@@ -37,12 +29,18 @@ public class Main {
                 return this.waterWarm;
             }
         };
-
         Spa spa = new CherryTreeSpa();
+        spa.isWaterWarm();
 
-        lightables.add(spa);
+        List<CommonRoom> rooms = new ArrayList<>();
+        rooms.add(garage);
+        rooms.add(kitchen);
+        rooms.add(serviceRoom);
+        rooms.add(firstRoom);
+        rooms.add(SecondRoom);
+        rooms.add(spa);
 
-        for(Lightable room : lightables){
+        for(CommonRoom room : rooms){
             System.out.println(room.lightIsOn());
         }
     }

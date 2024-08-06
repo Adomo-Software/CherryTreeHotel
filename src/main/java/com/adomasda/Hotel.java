@@ -1,6 +1,6 @@
 package com.adomasda;
 
-class CherryTreeHotel implements Kitchen, ServiceRoom, WithBalcony, WithConditioning, Garage {
+class CherryTreeHotel implements Kitchen, ServiceRoom, FirstRoom, SecondRoom, Garage {
     private boolean kitchenLightOn;
     private boolean serviceRoomLightOn;
     private boolean balconyLightOn;

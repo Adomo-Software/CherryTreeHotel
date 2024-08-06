@@ -1,5 +1,5 @@
 package com.adomasda;
 
-interface Kitchen extends Lightable {
+interface Kitchen extends CommonRoom {
     boolean isOvenOn();
 }
